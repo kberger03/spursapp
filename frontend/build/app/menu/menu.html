@@ -1,0 +1,40 @@
+<navbar2-cmp></navbar2-cmp>
+
+<div class="container">
+    <h1 align="center">San Antonio Spurs Game Schedule</h1>
+<div class="row">
+  <div class="col-sm-2" align="center"></div>
+  <div class="col-sm-8" align="center">
+    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#addGameModal">
+      Add Game
+    </button>
+    <table class="table table-bordered table-hover table-responsive">
+    <tbody>
+      <tr>
+        <td>
+            Date and Time<br>
+            Home/Away
+        </td>
+        <td>
+            Spurs vs. Opponent<br>
+            SpursScore - OppScore
+        </td>
+        <td>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editGameModal">
+            Edit Game
+          </button>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#deleteGameModal">
+            Delete Game
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="col-sm-2" align="center"></div>
+</div>
+</div>
+
+<addGameModal-cmp></addGameModal-cmp>
+<editGameModal-cmp></editGameModal-cmp>
+<deleteGameModal-cmp></deleteGameModal-cmp>

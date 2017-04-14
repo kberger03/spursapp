@@ -1,0 +1,28 @@
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" routerLink="/menu"><img src="frontend/assets/img/logo.png" width="30" class="img-responsive" alt="logo.png"></a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <button type="button" class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#signup">
+            Add Admin
+          </button>
+        </li>
+        <li class="padding-left">
+            <button type="button" class="btn btn-danger navbar-btn" routerLink="/"> Logout </button>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</nav>
+
+<signup-cmp></signup-cmp>
