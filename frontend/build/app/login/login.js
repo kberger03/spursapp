@@ -7,10 +7,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var login_form_1 = require("./login.form");
 var LoginComponent = (function () {
     function LoginComponent() {
-        this.name = 'LoginComponent';
+        this.user = new login_form_1.LoginForm('', '');
+        this.submitted = false;
     }
+    LoginComponent.prototype.onSubmit = function (value) {
+        console.log(value);
+        this.submitted = true;
+    };
     return LoginComponent;
 }());
 LoginComponent = __decorate([

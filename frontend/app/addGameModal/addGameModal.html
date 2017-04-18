@@ -8,44 +8,49 @@
         <h4 class="modal-title" id="exampleModalLabel">Add Game</h4>
       </div>
       <div class="modal-body">
-        <form class="form-horizontal">
-        <fieldset>
+        <!--Form-->
+        <form class="form-horizontal" name="addGameModalForm" #addGameModalForm="ngForm" (ngSubmit)="onSubmit(addGameModalForm.value)" novalidate>
+            <!--Date-->
             <div class="form-group">
                 <label for="Date" class="col-lg-2 control-label">Date</label>
                 <div class="col-lg-10">
-                    <input type="text" class="form-control" id="Date" placeholder="mm/dd/yy">
+                    <input type="date" class="form-control" name="Date" [(ngModel)]="game.Date" id="Date" placeholder="mm/dd/yy" required autofocus>
                 </div>
             </div>
+            <!--Opponent-->
             <div class="form-group">
                 <label for="Opponent" class="col-lg-2 control-label">Oppenent</label>
                 <div class="col-lg-10">
-                    <input type="text" class="form-control" id="Opponent" placeholder="Opponent Name">
+                    <input type="text" class="form-control" name="Opponent" [(ngModel)]="game.Opponent" id="Opponent" placeholder="Opponent Name" required>
                 </div>
             </div>
+            <!--Location-->
             <div class="form-group">
                 <label for="Location" class="col-lg-2 control-label">Spurs Home/Away</label>
                 <div class="col-lg-10">
-                    <input type="text" class="form-control" id="Location" placeholder="Location">
+                    <input type="text" class="form-control" name="Location" [(ngModel)]="game.Location" id="Location" placeholder="Location" required>
                 </div>
             </div>
+            <!--SpursScore-->
             <div class="form-group">
                 <label for="SpursScore" class="col-lg-2 control-label">Spurs Score</label>
                 <div class="col-lg-10">
-                    <input type="text" class="form-control" id="SpursScore" placeholder="Score">
+                    <input type="number" class="form-control" name="SpursScore" [(ngModel)]="game.SpursScore" id="SpursScore" placeholder="Score" required>
                 </div>
             </div>
+            <!--OppScore-->
             <div class="form-group">
                 <label for="OppScore" class="col-lg-2 control-label">Opponent Score</label>
                 <div class="col-lg-10">
-                    <input type="text" class="form-control" id="OppScore" placeholder="Score">
+                    <input type="number" class="form-control" name="OppScore" [(ngModel)]="game.OppScore" id="OppScore" placeholder="Score" required>
                 </div>
             </div>
-        </fieldset>
+            <!--Buttons-->
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
         </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Save changes</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>

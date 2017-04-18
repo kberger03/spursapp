@@ -7,10 +7,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var addGameModal_form_1 = require("./addGameModal.form");
 var addGameModalComponent = (function () {
     function addGameModalComponent() {
-        this.name = 'addGameModalComponent';
+        this.game = new addGameModal_form_1.addGameModalForm('', '', '', 0, 0);
+        this.submitted = false;
     }
+    addGameModalComponent.prototype.onSubmit = function (value) {
+        console.log(value);
+        this.submitted = true;
+    };
     return addGameModalComponent;
 }());
 addGameModalComponent = __decorate([

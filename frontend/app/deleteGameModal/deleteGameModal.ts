@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   templateUrl: 'deleteGameModal.html'
 })
 export class deleteGameModalComponent { 
-  name = 'deleteGameModalComponent'; 
+
 }

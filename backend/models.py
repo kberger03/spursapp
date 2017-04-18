@@ -34,6 +34,7 @@ class User(db.Model):
         since we are hashing the user's password before storing it into 
         the database.
         """
+        self.name     = name
         self.email    = email
         self.username = username
         # Protecting the user's password using a hash function

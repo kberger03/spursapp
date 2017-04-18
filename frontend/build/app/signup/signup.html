@@ -8,38 +8,41 @@
         <h2 class="modal-title" id="exampleModalLabel">Add Admin</h2>
       </div>
       <div class="modal-body">
-        <form class="form-horizontal">
-        <fieldset>
+        <!--Form-->
+        <form class="form-horizontal" name="signupForm" #signupForm="ngForm" (ngSubmit)="onSubmit(signupForm.value)" novalidate>
+        <!--Name Field-->
             <div class="form-group">
                 <label for="Name" class="col-lg-2 control-label"><i class="glyphicon glyphicon-hand-right"></i></label>
                 <div class="col-lg-10">
-                    <input type="text" class="form-control" id="Name" placeholder="Name">
+                    <input type="text" class="form-control" name="Name" [(ngModel)]="user.Name" id="Name" placeholder="Name" required autofocus>
                 </div>
             </div>
+            <!--Email Field-->
             <div class="form-group">
                 <label for="Email" class="col-lg-2 control-label"><i class="glyphicon glyphicon-envelope"></i></label>
                 <div class="col-lg-10">
-                    <input type="text" class="form-control" id="Email" placeholder="Email">
+                    <input type="text" class="form-control" name="Email" [(ngModel)]="user.Email" id="Email" placeholder="Email" required>
                 </div>
             </div>
+            <!--Username Field-->
             <div class="form-group">
                 <label for="Username" class="col-lg-2 control-label"><i class="glyphicon glyphicon-user"></i></label>
                 <div class="col-lg-10">
-                    <input type="text" class="form-control" id="Username" placeholder="Username">
+                    <input type="text" class="form-control" name="Username" [(ngModel)]="user.Username" id="Username" placeholder="Username" required>
                 </div>
             </div>
+            <!--Password Field-->
             <div class="form-group">
                 <label for="inputPassword" class="col-lg-2 control-label"><i class="glyphicon glyphicon-lock"></i></label>
                 <div class="col-lg-10">
-                    <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                    <input type="password" class="form-control" name="inputPassword" [(ngModel)]="user.inputPassword" id="inputPassword" placeholder="Password" required>
                 </div>
             </div>
-        </fieldset>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Add</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            </div>
         </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Save changes</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
