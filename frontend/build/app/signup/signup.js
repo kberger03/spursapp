@@ -24,6 +24,9 @@ var SignupComponent = (function () {
     SignupComponent.prototype.onSubmit = function (value) {
         console.log(value);
         this.submitted = true;
+        this.usersService.addUser(value).subscribe(function (data) {
+            console.log(data);
+        });
     };
     return SignupComponent;
 }());

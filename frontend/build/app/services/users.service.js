@@ -23,7 +23,11 @@ var UsersService = (function () {
     };
     UsersService.prototype.getUser = function () {
     };
-    UsersService.prototype.addUser = function () {
+    UsersService.prototype.addUser = function (value) {
+        var valueString = JSON.stringify(value);
+        var header = new http_1.Headers({ 'Content-Type': 'application/json' });
+        var options = new http_1.RequestOptions({ headers: header });
+        return this.http.post(this.url, valueString, options).map(function (res) { return res.json(); });
     };
     UsersService.prototype.deleteUser = function () {
     };
