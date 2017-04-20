@@ -10,22 +10,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var games_service_1 = require("../services/games.service");
-var deleteGameModalComponent = (function () {
-    function deleteGameModalComponent(gamesService) {
-        this.gamesService = gamesService;
-        this.gamesService.getGames().subscribe(function (games) {
-            console.log(games);
-        });
+var http_1 = require("@angular/http");
+require("rxjs/add/operator/map");
+var UsersService = (function () {
+    function UsersService(http) {
+        this.http = http;
+        this.url = '/api/v1/users';
+        console.log('UsersService Initialized...');
     }
-    return deleteGameModalComponent;
+    UsersService.prototype.getUsers = function () {
+        return this.http.get(this.url).map(function (res) { return res.json(); });
+    };
+    UsersService.prototype.getUser = function () {
+    };
+    UsersService.prototype.addUser = function () {
+    };
+    UsersService.prototype.deleteUser = function () {
+    };
+    return UsersService;
 }());
-deleteGameModalComponent = __decorate([
-    core_1.Component({
-        moduleId: module.id,
-        selector: 'deleteGameModal-cmp',
-        templateUrl: 'deleteGameModal.html'
-    }),
-    __metadata("design:paramtypes", [games_service_1.GamesService])
-], deleteGameModalComponent);
-exports.deleteGameModalComponent = deleteGameModalComponent;
+UsersService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_1.Http])
+], UsersService);
+exports.UsersService = UsersService;

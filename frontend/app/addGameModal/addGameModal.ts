@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-
 import { addGameModalForm } from './addGameModal.form';
+import { GamesService } from '../services/games.service';
 
 @Component({
   moduleId: module.id,
@@ -8,6 +8,12 @@ import { addGameModalForm } from './addGameModal.form';
   templateUrl: 'addGameModal.html'
 })
 export class addGameModalComponent { 
+
+  constructor(private gamesService: GamesService){
+    this.gamesService.getGames().subscribe(games => {
+      console.log(games);
+    });
+  }
   
   game = new addGameModalForm('', '', '', 0, 0);
   submitted = false;

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-
 import { SignupForm } from './signup.form';
+import { UsersService } from '../services/users.service';
 
 @Component({
   moduleId: module.id,
@@ -9,6 +9,12 @@ import { SignupForm } from './signup.form';
 })
 
 export class SignupComponent { 
+
+  constructor(private usersService: UsersService){
+    this.usersService.getUsers().subscribe(users => {
+      console.log(users);
+    });
+  }
 
   user = new SignupForm('', '', '', '');
   submitted = false;

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { GamesService } from '../services/games.service';
 
 @Component({
   moduleId: module.id,
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   templateUrl: 'home.html'
 })
 export class HomeComponent { 
-  name = 'HomeComponent'; 
+  
+  constructor(private gamesService: GamesService){
+    this.gamesService.getGames().subscribe(games => {
+      console.log(games);
+    });
+  }
+
 }

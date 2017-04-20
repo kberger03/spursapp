@@ -15,6 +15,8 @@ import { deleteGameModalComponent } from './deleteGameModal/deleteGameModal';
 import { navbarComponent } from './navbar/navbar';
 import { navbar2Component } from './navbar2/navbar2';
 import { navbar3Component } from './navbar3/navbar3';
+import { UsersService } from './services/users.service';
+import { GamesService } from './services/games.service';
 
 
 const appRoutes: Routes = [
@@ -42,6 +44,10 @@ const appRoutes: Routes = [
     navbarComponent, 
     navbar2Component,
     navbar3Component
+  ],
+  providers: [
+    UsersService,
+    GamesService
   ],
   bootstrap: [ AppComponent ]
 })
