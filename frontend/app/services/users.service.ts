@@ -25,7 +25,4 @@ export class UsersService {
         return this.http.post(this.url, valueString, options).map(res => res.json());   
     }
 
-    deleteUser(){
-    }
-
 }

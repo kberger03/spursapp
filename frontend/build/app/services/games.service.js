@@ -23,7 +23,11 @@ var GamesService = (function () {
     };
     GamesService.prototype.getGame = function () {
     };
-    GamesService.prototype.addGame = function () {
+    GamesService.prototype.addGame = function (value) {
+        var valueString = JSON.stringify(value);
+        var header = new http_1.Headers({ 'Content-Type': 'application/json' });
+        var options = new http_1.RequestOptions({ headers: header });
+        return this.http.post(this.url, valueString, options).map(function (res) { return res.json(); });
     };
     GamesService.prototype.deleteGame = function () {
     };

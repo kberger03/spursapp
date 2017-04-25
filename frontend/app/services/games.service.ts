@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Http, Response} from '@angular/http';
+import {Http, Response, Headers, RequestOptions} from '@angular/http';
 import 'rxjs/add/operator/map';
 
 @Injectable()
@@ -18,7 +18,11 @@ export class GamesService {
     getGame(){
     }
 
-    addGame(){    
+    addGame(value: any){ 
+        let valueString = JSON.stringify(value);
+        let header = new Headers({ 'Content-Type': 'application/json'});
+        let options = new RequestOptions({ headers: header });
+        return this.http.post(this.url, valueString, options).map(res => res.json());
     }
 
     deleteGame(){

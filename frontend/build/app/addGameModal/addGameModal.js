@@ -24,6 +24,9 @@ var addGameModalComponent = (function () {
     addGameModalComponent.prototype.onSubmit = function (value) {
         console.log(value);
         this.submitted = true;
+        this.gamesService.addGame(value).subscribe(function (data) {
+            console.log(data);
+        });
     };
     return addGameModalComponent;
 }());

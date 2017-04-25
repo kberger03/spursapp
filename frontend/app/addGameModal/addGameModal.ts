@@ -21,6 +21,9 @@ export class addGameModalComponent {
   onSubmit(value: any){
     console.log(value);
     this.submitted = true;
+        this.gamesService.addGame(value).subscribe(data => {
+      console.log(data);
+    });
   }
 
 }

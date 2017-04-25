@@ -29,8 +29,6 @@ var UsersService = (function () {
         var options = new http_1.RequestOptions({ headers: header });
         return this.http.post(this.url, valueString, options).map(function (res) { return res.json(); });
     };
-    UsersService.prototype.deleteUser = function () {
-    };
     return UsersService;
 }());
 UsersService = __decorate([
