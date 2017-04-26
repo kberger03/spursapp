@@ -21,12 +21,12 @@ var addGameModalComponent = (function () {
         this.submitted = false;
     }
     addGameModalComponent.prototype.onSubmit = function (value) {
-        var _this = this;
         this.submitted = true;
         this.gamesService.addGame(value).subscribe(function (data) {
             console.log(data);
             $('#addGameModal').modal("hide");
-            _this.router.navigate(['menu']);
+            window.location.reload();
+            // this.router.navigateByUrl('menu');
         });
     };
     return addGameModalComponent;

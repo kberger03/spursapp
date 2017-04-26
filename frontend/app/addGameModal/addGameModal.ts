@@ -22,7 +22,8 @@ export class addGameModalComponent {
     this.gamesService.addGame(value).subscribe(data => {
       console.log(data);
       $('#addGameModal').modal("hide");   
-      this.router.navigate(['menu']);
+      window.location.reload();
+      // this.router.navigateByUrl('menu');
     });
     
 
