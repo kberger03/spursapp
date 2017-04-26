@@ -13,49 +13,22 @@
   <div class="col-sm-2" align="center"></div>
   <div class="col-sm-8" align="center">
     <table class="table table-bordered table-hover table-responsive">
-    <tbody>
-      <tr>
-        <td>
-            Date and Time<br>
-            Home/Away
-        </td>
-        <td>
-            Spurs vs. Opponent<br>
-            SpursScore - OppScore
-        </td>
-      </tr>
-      <tr>
-        <td>
-            Date and Time<br>
-            Home/Away
-        </td>
-        <td>
-            Spurs vs. Opponent<br>
-            SpursScore - OppScore
-        </td>
-      </tr>
-      <tr>
-        <td>
-            Date and Time<br>
-            Home/Away
-        </td>
-        <td>
-            Spurs vs. Opponent<br>
-            SpursScore - OppScore
-        </td>
-      </tr>
-    </tbody>
-  </table>
+        <tbody>
+            <div *ngFor="let game of games">
+                <tr>
+                <td>
+                    {{game.date}}<br>
+                    {{game.location}}
+                </td>
+                <td>
+                    Spurs vs. {{game.opponent}}<br>
+                    {{game.spursscore}} - {{game.oppscore}}
+                </td>
+                </tr>
+            </div>
+        </tbody>
+    </table>
   </div>
   <div class="col-sm-2" align="center"></div>
 </div>
-<!--<hr />
-<h3>Games</h3>
-<div ngFor = "let game of games">
-    <h4>{{game.date}}</h4>
-    <h4>{{game.opponent}}</h4>
-    <h4>{{game.location}}</h4>
-    <h4>{{game.spursscore}}</h4>
-    <h4>{{game.oppscore}}</h4>
-</div>-->
 </div>

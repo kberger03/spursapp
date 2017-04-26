@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { GamesService } from '../services/games.service';
 
 @Component({
@@ -7,10 +7,24 @@ import { GamesService } from '../services/games.service';
   templateUrl: 'menu.html'
 })
 export class MenuComponent { 
+
+  games: any = [];
+  game: any = '';
   
   constructor(private gamesService: GamesService){
-    this.gamesService.getGames().subscribe(games => {
-      console.log(games);
+
+  }
+
+  ngOnInit() {
+    this.gamesService.getGames().subscribe(data => {
+      this.games = data.objects;
+    });
+  }
+
+  openEditGameModal(id: any){
+    this.gamesService.getGame(id).subscribe(data => {
+      this.game = data;
+      console.log(data);
     });
   }
 

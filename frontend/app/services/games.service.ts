@@ -8,14 +8,15 @@ export class GamesService {
     url: string = '/api/v1/games';
 
     constructor(private http: Http){
-        console.log('GamesService Initialized...');
+        
     }
 
     getGames(){
         return this.http.get(this.url).map(res => res.json());
     }
 
-    getGame(){
+    getGame(id: any){
+        return this.http.get(this.url + "/" + id).map(res => res.json());
     }
 
     addGame(value: any){ 

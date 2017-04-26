@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { GamesService } from '../services/games.service';
 
 @Component({
@@ -6,24 +6,19 @@ import { GamesService } from '../services/games.service';
   selector: 'home-cmp',
   templateUrl: 'home.html'
 })
-export class HomeComponent { 
-
-  // games: Game[];
+export class HomeComponent implements OnInit { 
   
+  games: any = [];
+
   constructor(private gamesService: GamesService){
-    this.gamesService.getGames().subscribe(games => {
-      console.log(games);
-      // this.games = games;
+    
+  }
+
+  ngOnInit() {
+        this.gamesService.getGames().subscribe(data => {
+      this.games = data.objects;
     });
   }
 
 }
 
-// interface Game {
-//     id: number;
-//     date: string;
-//     opponent: string;
-//     location: string;
-//     spursscore: number;
-//     oppscore: number;
-// }

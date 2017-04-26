@@ -16,12 +16,12 @@ var GamesService = (function () {
     function GamesService(http) {
         this.http = http;
         this.url = '/api/v1/games';
-        console.log('GamesService Initialized...');
     }
     GamesService.prototype.getGames = function () {
         return this.http.get(this.url).map(function (res) { return res.json(); });
     };
-    GamesService.prototype.getGame = function () {
+    GamesService.prototype.getGame = function (id) {
+        return this.http.get(this.url + "/" + id).map(function (res) { return res.json(); });
     };
     GamesService.prototype.addGame = function (value) {
         var valueString = JSON.stringify(value);

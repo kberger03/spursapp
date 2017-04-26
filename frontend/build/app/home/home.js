@@ -12,14 +12,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var games_service_1 = require("../services/games.service");
 var HomeComponent = (function () {
-    // games: Game[];
     function HomeComponent(gamesService) {
-        var _this = this;
         this.gamesService = gamesService;
-        this.gamesService.getGames().subscribe(function (games) {
-            _this.games = games;
-        });
+        this.games = [];
     }
+    HomeComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.gamesService.getGames().subscribe(function (data) {
+            _this.games = data.objects;
+        });
+    };
     return HomeComponent;
 }());
 HomeComponent = __decorate([
@@ -31,11 +33,3 @@ HomeComponent = __decorate([
     __metadata("design:paramtypes", [games_service_1.GamesService])
 ], HomeComponent);
 exports.HomeComponent = HomeComponent;
-// interface Game {
-//     id: number;
-//     date: string;
-//     opponent: string;
-//     location: string;
-//     spursscore: number;
-//     oppscore: number;
-// }

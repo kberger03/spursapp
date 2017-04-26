@@ -14,10 +14,22 @@ var games_service_1 = require("../services/games.service");
 var MenuComponent = (function () {
     function MenuComponent(gamesService) {
         this.gamesService = gamesService;
-        this.gamesService.getGames().subscribe(function (games) {
-            console.log(games);
-        });
+        this.games = [];
+        this.game = '';
     }
+    MenuComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.gamesService.getGames().subscribe(function (data) {
+            _this.games = data.objects;
+        });
+    };
+    MenuComponent.prototype.openEditGameModal = function (id) {
+        var _this = this;
+        this.gamesService.getGame(id).subscribe(function (data) {
+            _this.game = data;
+            console.log(data);
+        });
+    };
     return MenuComponent;
 }());
 MenuComponent = __decorate([

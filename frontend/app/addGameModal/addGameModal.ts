@@ -19,11 +19,13 @@ export class addGameModalComponent {
   submitted = false;
 
   onSubmit(value: any){
-    console.log(value);
     this.submitted = true;
-        this.gamesService.addGame(value).subscribe(data => {
+    this.gamesService.addGame(value).subscribe(data => {
       console.log(data);
+      $('#addGameModal').modal("hide");   
     });
+    
+
   }
 
 }
