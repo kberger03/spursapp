@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router'; 
 import { addGameModalForm } from './addGameModal.form';
 import { GamesService } from '../services/games.service';
 
@@ -9,10 +10,8 @@ import { GamesService } from '../services/games.service';
 })
 export class addGameModalComponent { 
 
-  constructor(private gamesService: GamesService){
-    this.gamesService.getGames().subscribe(games => {
-      console.log(games);
-    });
+  constructor(private gamesService: GamesService, private router: Router){
+
   }
   
   game = new addGameModalForm('', '', '', 0, 0);
@@ -23,6 +22,7 @@ export class addGameModalComponent {
     this.gamesService.addGame(value).subscribe(data => {
       console.log(data);
       $('#addGameModal').modal("hide");   
+      this.router.navigate(['menu']);
     });
     
 

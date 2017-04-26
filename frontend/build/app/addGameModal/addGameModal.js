@@ -10,22 +10,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
 var addGameModal_form_1 = require("./addGameModal.form");
 var games_service_1 = require("../services/games.service");
 var addGameModalComponent = (function () {
-    function addGameModalComponent(gamesService) {
+    function addGameModalComponent(gamesService, router) {
         this.gamesService = gamesService;
+        this.router = router;
         this.game = new addGameModal_form_1.addGameModalForm('', '', '', 0, 0);
         this.submitted = false;
-        this.gamesService.getGames().subscribe(function (games) {
-            console.log(games);
-        });
     }
     addGameModalComponent.prototype.onSubmit = function (value) {
+        var _this = this;
         this.submitted = true;
         this.gamesService.addGame(value).subscribe(function (data) {
             console.log(data);
             $('#addGameModal').modal("hide");
+            _this.router.navigate(['menu']);
         });
     };
     return addGameModalComponent;
@@ -36,6 +37,6 @@ addGameModalComponent = __decorate([
         selector: 'addGameModal-cmp',
         templateUrl: 'addGameModal.html'
     }),
-    __metadata("design:paramtypes", [games_service_1.GamesService])
+    __metadata("design:paramtypes", [games_service_1.GamesService, router_1.Router])
 ], addGameModalComponent);
 exports.addGameModalComponent = addGameModalComponent;
