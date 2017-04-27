@@ -23,13 +23,8 @@ var MenuComponent = (function () {
             _this.games = data.objects;
         });
     };
-    MenuComponent.prototype.openEditGameModal = function (id) {
-        var _this = this;
-        this.gamesService.getGame(id).subscribe(function (data) {
-            _this.game = data;
-            console.log("openeditgame is " + data);
-            $('#editGameModal').modal("show");
-        });
+    MenuComponent.prototype.openEditGameModal = function () {
+        $('#editGameModal').modal("show");
     };
     return MenuComponent;
 }());

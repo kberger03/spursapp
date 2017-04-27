@@ -21,7 +21,8 @@
             {{game.spursscore}} - {{game.oppscore}}
           </td>
           <td>
-          <button (click)="openEditGameModal(game.id)" type="button" class="btn btn-primary">
+          <editGameModal-cmp [game]="game"></editGameModal-cmp>
+          <button (click)="openEditGameModal()" type="button" class="btn btn-primary">
             Edit Game
           </button>
           </td>
@@ -39,5 +40,4 @@
 </div>
 
 <addGameModal-cmp></addGameModal-cmp>
-<editGameModal-cmp></editGameModal-cmp>
 <deleteGameModal-cmp></deleteGameModal-cmp>

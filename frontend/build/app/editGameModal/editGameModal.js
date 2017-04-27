@@ -10,14 +10,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var editGameModal_form_1 = require("./editGameModal.form");
 var games_service_1 = require("../services/games.service");
 // import { MenuComponent } from '../menu/menu';
 var editGameModalComponent = (function () {
-    // @Input() game: any;
     function editGameModalComponent(gamesService) {
         this.gamesService = gamesService;
-        this.game = new editGameModal_form_1.editGameModalForm('', '', '', 0, 0);
         this.submitted = false;
     }
     editGameModalComponent.prototype.onSubmit = function (value) {
@@ -26,6 +23,10 @@ var editGameModalComponent = (function () {
     };
     return editGameModalComponent;
 }());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Object)
+], editGameModalComponent.prototype, "game", void 0);
 editGameModalComponent = __decorate([
     core_1.Component({
         moduleId: module.id,

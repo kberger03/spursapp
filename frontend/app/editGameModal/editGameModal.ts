@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { editGameModalForm } from './editGameModal.form';
 import { GamesService } from '../services/games.service';
-// import { MenuComponent } from '../menu/menu';
 
 @Component({
   moduleId: module.id,
@@ -10,13 +9,12 @@ import { GamesService } from '../services/games.service';
 })
 export class editGameModalComponent { 
 
-  // @Input() game: any;
+  @Input() game: any;
 
   constructor(private gamesService: GamesService){
     
   }
 
-  game = new editGameModalForm('', '', '', 0, 0);
   submitted = false;
 
   onSubmit(value: any){

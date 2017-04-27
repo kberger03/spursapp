@@ -21,12 +21,8 @@ export class MenuComponent {
     });
   }
 
-  openEditGameModal(id: any){
-    this.gamesService.getGame(id).subscribe(data => {
-      this.game = data;
-      console.log("openeditgame is " + data);
+  openEditGameModal(){
       $('#editGameModal').modal("show"); 
-    });
   }
 
 }
