@@ -6,7 +6,6 @@ import 'rxjs/add/operator/map';
 export class GamesService {
 
     url: string = '/api/v1/games';
-    oneGame: any = '';
 
     constructor(private http: Http){
         
@@ -25,16 +24,6 @@ export class GamesService {
         let header = new Headers({ 'Content-Type': 'application/json'});
         let options = new RequestOptions({ headers: header });
         return this.http.post(this.url, valueString, options).map(res => res.json());
-    }
-
-    setOption(value: any){
-        this.oneGame = value;
-        console.log("value inside setoption " + value);
-        console.log("onegame inside setoption " + this.oneGame);
-    }
-
-    getOption(){
-        return this.oneGame;
     }
 
     deleteGame(){

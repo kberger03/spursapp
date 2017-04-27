@@ -26,7 +26,6 @@ export class MenuComponent {
       this.game = data;
       console.log("openeditgame is " + data);
       $('#editGameModal').modal("show"); 
-      this.gamesService.setOption(id); 
     });
   }
 

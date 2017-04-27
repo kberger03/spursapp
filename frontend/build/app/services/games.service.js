@@ -16,7 +16,6 @@ var GamesService = (function () {
     function GamesService(http) {
         this.http = http;
         this.url = '/api/v1/games';
-        this.oneGame = '';
     }
     GamesService.prototype.getGames = function () {
         return this.http.get(this.url).map(function (res) { return res.json(); });
@@ -29,14 +28,6 @@ var GamesService = (function () {
         var header = new http_1.Headers({ 'Content-Type': 'application/json' });
         var options = new http_1.RequestOptions({ headers: header });
         return this.http.post(this.url, valueString, options).map(function (res) { return res.json(); });
-    };
-    GamesService.prototype.setOption = function (value) {
-        this.oneGame = value;
-        console.log("value inside setoption " + value);
-        console.log("onegame inside setoption " + this.oneGame);
-    };
-    GamesService.prototype.getOption = function () {
-        return this.oneGame;
     };
     GamesService.prototype.deleteGame = function () {
     };

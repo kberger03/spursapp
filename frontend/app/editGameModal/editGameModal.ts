@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { editGameModalForm } from './editGameModal.form';
 import { GamesService } from '../services/games.service';
+// import { MenuComponent } from '../menu/menu';
 
 @Component({
   moduleId: module.id,
@@ -9,15 +10,10 @@ import { GamesService } from '../services/games.service';
 })
 export class editGameModalComponent { 
 
-  oneGame: any = '';
-  singularGame: any = '';
+  // @Input() game: any;
 
   constructor(private gamesService: GamesService){
-    this.oneGame = this.gamesService.getOption();
-    this.gamesService.getGame(this.oneGame).subscribe(data => {
-      this.singularGame = data;
-      console.log("singular game is " + data);
-    });
+    
   }
 
   game = new editGameModalForm('', '', '', 0, 0);

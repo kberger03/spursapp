@@ -14,35 +14,35 @@
             <div class="form-group">
                 <label for="Date" class="col-lg-2 control-label">Date</label>
                 <div class="col-lg-10">
-                    <input type="date" class="form-control" name="Date" [(ngModel)]="game.Date" id="Date" placeholder="mm/dd/yy" required autofocus>
+                    <input type="date" class="form-control" name="Date" [(ngModel)]="game.date" id="Date" placeholder="mm/dd/yy" required autofocus>
                 </div>
             </div>
             <!--Opponent-->
             <div class="form-group">
                 <label for="Opponent" class="col-lg-2 control-label">Oppenent</label>
                 <div class="col-lg-10">
-                    <input type="text" class="form-control" name="Opponent" [(ngModel)]="game.Opponent" id="Opponent" placeholder="singularGame.opponent" required>
+                    <input type="text" class="form-control" name="Opponent" [(ngModel)]="game.opponent" id="Opponent" placeholder="opponent" required>
                 </div>
             </div>
             <!--Location-->
             <div class="form-group">
                 <label for="Location" class="col-lg-2 control-label">Spurs Home/Away</label>
                 <div class="col-lg-10">
-                    <input type="text" class="form-control" name="Location" [(ngModel)]="game.Location" id="Location" placeholder="singularGame.location" required>
+                    <input type="text" class="form-control" name="Location" [(ngModel)]="game.location" id="Location" placeholder="editGame.location" required>
                 </div>
             </div>
             <!--SpursScore-->
             <div class="form-group">
                 <label for="SpursScore" class="col-lg-2 control-label">Spurs Score</label>
                 <div class="col-lg-10">
-                    <input type="number" class="form-control" name="SpursScore" [(ngModel)]="game.SpursScore" id="SpursScore" placeholder="singularGame.spursscore" required>
+                    <input type="number" class="form-control" name="SpursScore" [(ngModel)]="game.spursscore" id="SpursScore" placeholder="editGame.spursscore" required>
                 </div>
             </div>
             <!--OppScore-->
             <div class="form-group">
                 <label for="OppScore" class="col-lg-2 control-label">Opponent Score</label>
                 <div class="col-lg-10">
-                    <input type="number" class="form-control" name="OppScore" [(ngModel)]="game.OppScore" id="OppScore" placeholder="singularGame.oppscore" required>
+                    <input type="number" class="form-control" name="OppScore" [(ngModel)]="game.oppscore" id="OppScore" placeholder="editGame.oppscore" required>
                 </div>
             </div>
             <div class="modal-footer">
