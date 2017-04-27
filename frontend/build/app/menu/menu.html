@@ -20,11 +20,11 @@
             SPURS vs. {{game.opponent | uppercase}}<br>
             {{game.spursscore}} - {{game.oppscore}}
           </td>
-          <!--<td>
-          <button (onclick)="openEditGameModal({{game.id}})" type="button" class="btn btn-primary">
+          <td>
+          <button (click)="openEditGameModal(game.id)" type="button" class="btn btn-primary">
             Edit Game
           </button>
-          </td>-->
+          </td>
           <td>
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#deleteGameModal">
             Delete Game

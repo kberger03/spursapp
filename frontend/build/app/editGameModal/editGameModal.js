@@ -14,11 +14,16 @@ var editGameModal_form_1 = require("./editGameModal.form");
 var games_service_1 = require("../services/games.service");
 var editGameModalComponent = (function () {
     function editGameModalComponent(gamesService) {
+        var _this = this;
         this.gamesService = gamesService;
+        this.oneGame = '';
+        this.singularGame = '';
         this.game = new editGameModal_form_1.editGameModalForm('', '', '', 0, 0);
         this.submitted = false;
-        this.gamesService.getGames().subscribe(function (games) {
-            console.log(games);
+        this.oneGame = this.gamesService.getOption();
+        this.gamesService.getGame(this.oneGame).subscribe(function (data) {
+            _this.singularGame = data;
+            console.log("singular game is " + data);
         });
     }
     editGameModalComponent.prototype.onSubmit = function (value) {

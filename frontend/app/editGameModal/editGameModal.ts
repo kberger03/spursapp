@@ -9,9 +9,14 @@ import { GamesService } from '../services/games.service';
 })
 export class editGameModalComponent { 
 
+  oneGame: any = '';
+  singularGame: any = '';
+
   constructor(private gamesService: GamesService){
-    this.gamesService.getGames().subscribe(games => {
-      console.log(games);
+    this.oneGame = this.gamesService.getOption();
+    this.gamesService.getGame(this.oneGame).subscribe(data => {
+      this.singularGame = data;
+      console.log("singular game is " + data);
     });
   }
 

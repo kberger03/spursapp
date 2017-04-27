@@ -27,7 +27,9 @@ var MenuComponent = (function () {
         var _this = this;
         this.gamesService.getGame(id).subscribe(function (data) {
             _this.game = data;
-            console.log(data);
+            console.log("openeditgame is " + data);
+            $('#editGameModal').modal("show");
+            _this.gamesService.setOption(id);
         });
     };
     return MenuComponent;
