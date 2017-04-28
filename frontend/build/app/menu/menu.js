@@ -26,6 +26,9 @@ var MenuComponent = (function () {
     MenuComponent.prototype.openEditGameModal = function () {
         $('#editGameModal').modal("show");
     };
+    MenuComponent.prototype.openDeleteGameModal = function () {
+        $('#deleteGameModal').modal("show");
+    };
     return MenuComponent;
 }());
 MenuComponent = __decorate([

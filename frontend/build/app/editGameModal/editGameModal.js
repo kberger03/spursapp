@@ -11,15 +11,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var games_service_1 = require("../services/games.service");
-// import { MenuComponent } from '../menu/menu';
 var editGameModalComponent = (function () {
     function editGameModalComponent(gamesService) {
         this.gamesService = gamesService;
         this.submitted = false;
     }
     editGameModalComponent.prototype.onSubmit = function (value) {
-        console.log(value);
         this.submitted = true;
+        this.gamesService.updateGame(value).subscribe(function (data) {
+            $('#editGameModal').modal("hide");
+            //window.location.reload();
+            // this.router.navigateByUrl('menu');
+        });
     };
     return editGameModalComponent;
 }());

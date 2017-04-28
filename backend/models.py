@@ -49,11 +49,11 @@ class Game(db.Model):
     __tablename__ = 'game'
 
     # Fields in this model
-    id       = db.Column(db.Integer, primary_key=True)
-    date    = db.Column(db.DateTime, nullable=False)
-    opponent = db.Column(db.String, nullable=False)
-    location = db.Column(db.String(4), nullable=False)
-    spursscore = db.Column(db.Integer, nullable=False)
-    oppscore = db.Column(db.Integer, nullable=False)
+    id          = db.Column(db.Integer, primary_key=True)
+    date        = db.Column(db.DateTime, nullable=False)
+    opponent    = db.Column(db.String, nullable=False)
+    location    = db.Column(db.String(4), nullable=False)
+    spursscore  = db.Column(db.Integer, nullable=False)
+    oppscore    = db.Column(db.Integer, nullable=False)
 
 # More models can be added here...

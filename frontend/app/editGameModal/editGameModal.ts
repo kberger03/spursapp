@@ -18,8 +18,13 @@ export class editGameModalComponent {
   submitted = false;
 
   onSubmit(value: any){
-    console.log(value);
     this.submitted = true;
+    this.gamesService.updateGame(value).subscribe(data => {
+      $('#editGameModal').modal("hide");   
+      //window.location.reload();
+      // this.router.navigateByUrl('menu');
+    });
+    
   }
 
 }

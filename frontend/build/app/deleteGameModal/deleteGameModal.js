@@ -14,12 +14,23 @@ var games_service_1 = require("../services/games.service");
 var deleteGameModalComponent = (function () {
     function deleteGameModalComponent(gamesService) {
         this.gamesService = gamesService;
-        this.gamesService.getGames().subscribe(function (games) {
-            console.log(games);
-        });
+        this.submitted = false;
     }
+    deleteGameModalComponent.prototype.deleteGame = function (value) {
+        this.submitted = true;
+        this.gamesService.deleteGame(value).subscribe(function (data) {
+            console.log(data);
+            $('#deleteGameModal').modal("hide");
+            window.location.reload();
+            // this.router.navigateByUrl('menu');
+        });
+    };
     return deleteGameModalComponent;
 }());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Object)
+], deleteGameModalComponent.prototype, "game", void 0);
 deleteGameModalComponent = __decorate([
     core_1.Component({
         moduleId: module.id,

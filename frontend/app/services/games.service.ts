@@ -26,10 +26,18 @@ export class GamesService {
         return this.http.post(this.url, valueString, options).map(res => res.json());
     }
 
-    deleteGame(){
+    deleteGame(value: any){
+        let header = new Headers({ 'Content-Type': 'application/json'});
+        let options = new RequestOptions({ headers: header }); 
+        return this.http.delete(this.url + "/" + value, options).map(res => res.json());
     }
 
-    updateGame(){
+    updateGame(value: any){
+        console.log("value.is before is " + value.id);
+        let valueString = JSON.stringify(value);
+        let header = new Headers({ 'Content-Type': 'application/json'});
+        let options = new RequestOptions({ headers: header });
+        return this.http.put(this.url + "/" + value.id, valueString, options).map(res => res.json());
     }
 
 }

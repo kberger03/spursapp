@@ -25,4 +25,8 @@ export class MenuComponent {
       $('#editGameModal').modal("show"); 
   }
 
+    openDeleteGameModal(){
+      $('#deleteGameModal').modal("show"); 
+  }
+
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { GamesService } from '../services/games.service';
 
 @Component({
@@ -8,10 +8,23 @@ import { GamesService } from '../services/games.service';
 })
 export class deleteGameModalComponent { 
 
+  @Input() game: any;
+
   constructor(private gamesService: GamesService){
-    this.gamesService.getGames().subscribe(games => {
-      console.log(games);
+
+  }
+
+  submitted = false;
+
+  deleteGame(value: any){
+    this.submitted = true;
+    this.gamesService.deleteGame(value).subscribe(data => {
+      console.log(data);
+      $('#deleteGameModal').modal("hide");   
+      window.location.reload();
+      // this.router.navigateByUrl('menu');
     });
+    
   }
 
 }

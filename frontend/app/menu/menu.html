@@ -27,7 +27,8 @@
           </button>
           </td>
           <td>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#deleteGameModal">
+          <deleteGameModal-cmp [game]="game"></deleteGameModal-cmp>
+          <button (click)="openDeleteGameModal()" type="button" class="btn btn-primary">
             Delete Game
           </button>
         </td>
@@ -40,4 +41,3 @@
 </div>
 
 <addGameModal-cmp></addGameModal-cmp>
-<deleteGameModal-cmp></deleteGameModal-cmp>
