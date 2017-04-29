@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { editGameModalForm } from './editGameModal.form';
 import { GamesService } from '../services/games.service';
+import { MenuComponent } from '../menu/menu';
 
 @Component({
   moduleId: module.id,
@@ -12,7 +13,7 @@ export class editGameModalComponent {
   @Input() game: any;
 
   constructor(private gamesService: GamesService){
-    
+
   }
 
   submitted = false;
@@ -25,6 +26,11 @@ export class editGameModalComponent {
       // this.router.navigateByUrl('menu');
     });
     
+  }
+
+  closeEditGameModal(){
+      $('#editGameModal').modal("hide"); 
+      window.location.reload();
   }
 
 }

@@ -33,7 +33,6 @@ export class GamesService {
     }
 
     updateGame(value: any){
-        console.log("value.is before is " + value.id);
         let valueString = JSON.stringify(value);
         let header = new Headers({ 'Content-Type': 'application/json'});
         let options = new RequestOptions({ headers: header });

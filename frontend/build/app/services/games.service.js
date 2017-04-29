@@ -35,7 +35,6 @@ var GamesService = (function () {
         return this.http.delete(this.url + "/" + value, options).map(function (res) { return res.json(); });
     };
     GamesService.prototype.updateGame = function (value) {
-        console.log("value.is before is " + value.id);
         var valueString = JSON.stringify(value);
         var header = new http_1.Headers({ 'Content-Type': 'application/json' });
         var options = new http_1.RequestOptions({ headers: header });

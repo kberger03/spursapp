@@ -24,6 +24,10 @@ var editGameModalComponent = (function () {
             // this.router.navigateByUrl('menu');
         });
     };
+    editGameModalComponent.prototype.closeEditGameModal = function () {
+        $('#editGameModal').modal("hide");
+        window.location.reload();
+    };
     return editGameModalComponent;
 }());
 __decorate([
