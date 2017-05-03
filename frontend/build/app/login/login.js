@@ -40,6 +40,8 @@ LoginComponent = __decorate([
         selector: 'login-cmp',
         templateUrl: 'login.html'
     }),
-    __metadata("design:paramtypes", [users_service_1.UsersService, auth_service_1.AuthService, router_1.Router])
+    __metadata("design:paramtypes", [users_service_1.UsersService,
+        auth_service_1.AuthService,
+        router_1.Router])
 ], LoginComponent);
 exports.LoginComponent = LoginComponent;

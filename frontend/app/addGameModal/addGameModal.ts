@@ -15,10 +15,8 @@ export class addGameModalComponent {
   }
   
   game = new addGameModalForm('', '', '', 0, 0);
-  submitted = false;
 
   onSubmit(value: any){
-    this.submitted = true;
     this.gamesService.addGame(value).subscribe(data => {
       console.log(data);
       $('#addGameModal').modal("hide");   

@@ -18,10 +18,8 @@ var addGameModalComponent = (function () {
         this.gamesService = gamesService;
         this.router = router;
         this.game = new addGameModal_form_1.addGameModalForm('', '', '', 0, 0);
-        this.submitted = false;
     }
     addGameModalComponent.prototype.onSubmit = function (value) {
-        this.submitted = true;
         this.gamesService.addGame(value).subscribe(function (data) {
             console.log(data);
             $('#addGameModal').modal("hide");
