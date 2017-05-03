@@ -11,11 +11,13 @@ var platform_browser_1 = require("@angular/platform-browser");
 var router_1 = require("@angular/router");
 var http_1 = require("@angular/http");
 var forms_1 = require("@angular/forms");
+var core_2 = require("angular2-google-maps/core");
 var app_component_1 = require("./app.component");
 var home_1 = require("./home/home");
 var login_1 = require("./login/login");
 var signup_1 = require("./signup/signup");
 var menu_1 = require("./menu/menu");
+var mapLocation_1 = require("./mapLocation/mapLocation");
 var addGameModal_1 = require("./addGameModal/addGameModal");
 var editGameModal_1 = require("./editGameModal/editGameModal");
 var deleteGameModal_1 = require("./deleteGameModal/deleteGameModal");
@@ -28,7 +30,8 @@ var auth_service_1 = require("./services/auth.service");
 var appRoutes = [
     { path: '', component: home_1.HomeComponent },
     { path: 'login', component: login_1.LoginComponent },
-    { path: 'menu', component: menu_1.MenuComponent }
+    { path: 'menu', component: menu_1.MenuComponent },
+    { path: 'map', component: mapLocation_1.mapLocationComponent }
 ];
 var AppModule = (function () {
     function AppModule() {
@@ -41,7 +44,10 @@ AppModule = __decorate([
             platform_browser_1.BrowserModule,
             router_1.RouterModule.forRoot(appRoutes),
             http_1.HttpModule,
-            forms_1.FormsModule
+            forms_1.FormsModule,
+            core_2.AgmCoreModule.forRoot({
+                apiKey: 'AIzaSyCA-S4XiJZQ8xXUibPzrsn1efJIe6sBoyc'
+            })
         ],
         declarations: [
             app_component_1.AppComponent,
@@ -49,6 +55,7 @@ AppModule = __decorate([
             login_1.LoginComponent,
             signup_1.SignupComponent,
             menu_1.MenuComponent,
+            mapLocation_1.mapLocationComponent,
             addGameModal_1.addGameModalComponent,
             editGameModal_1.editGameModalComponent,
             deleteGameModal_1.deleteGameModalComponent,
