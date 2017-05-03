@@ -17,14 +17,14 @@ export class SignupComponent {
   }
 
   user = new SignupForm('', '', '', '');
-  submitted = false;
 
   onSubmit(value: any){
     console.log(value);
-    this.submitted = true;
     this.usersService.addUser(value).subscribe(data => {
       console.log(data);
+      $('#signup').modal("hide");  
     });
+    
   }
 
 }

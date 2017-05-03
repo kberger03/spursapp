@@ -12,28 +12,22 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 require("rxjs/add/operator/map");
-var UsersService = (function () {
-    function UsersService(http) {
+var AuthService = (function () {
+    function AuthService(http) {
         this.http = http;
-        this.url = '/api/v1/users';
-        console.log('UsersService Initialized...');
+        this.url = '/api/v1/auth';
     }
-    UsersService.prototype.getUsers = function () {
-        return this.http.get(this.url).map(function (res) { return res.json(); });
-    };
-    UsersService.prototype.getUser = function (id) {
-        return this.http.get(this.url + "/" + id).map(function (res) { return res.json(); });
-    };
-    UsersService.prototype.addUser = function (value) {
+    AuthService.prototype.authenticate = function (value) {
         var valueString = JSON.stringify(value);
         var header = new http_1.Headers({ 'Content-Type': 'application/json' });
         var options = new http_1.RequestOptions({ headers: header });
+        console.log(valueString);
         return this.http.post(this.url, valueString, options).map(function (res) { return res.json(); });
     };
-    return UsersService;
+    return AuthService;
 }());
-UsersService = __decorate([
+AuthService = __decorate([
     core_1.Injectable(),
     __metadata("design:paramtypes", [http_1.Http])
-], UsersService);
-exports.UsersService = UsersService;
+], AuthService);
+exports.AuthService = AuthService;

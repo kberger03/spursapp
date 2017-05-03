@@ -16,16 +16,15 @@ var SignupComponent = (function () {
     function SignupComponent(usersService) {
         this.usersService = usersService;
         this.user = new signup_form_1.SignupForm('', '', '', '');
-        this.submitted = false;
         this.usersService.getUsers().subscribe(function (users) {
             console.log(users);
         });
     }
     SignupComponent.prototype.onSubmit = function (value) {
         console.log(value);
-        this.submitted = true;
         this.usersService.addUser(value).subscribe(function (data) {
             console.log(data);
+            $('#signup').modal("hide");
         });
     };
     return SignupComponent;

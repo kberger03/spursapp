@@ -30,7 +30,7 @@ export class editGameModalComponent {
 
   closeEditGameModal(){
       $('#editGameModal').modal("hide"); 
-      window.location.reload();
+      // window.location.reload();
   }
 
 }

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { LoginForm } from './login.form';
 import { UsersService } from '../services/users.service';
+import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   moduleId: module.id,
@@ -10,18 +12,23 @@ import { UsersService } from '../services/users.service';
 
 export class LoginComponent { 
 
-  constructor(private usersService: UsersService){
+  constructor(
+    private usersService: UsersService, 
+    private authService: AuthService, 
+    private router: Router ){
     this.usersService.getUsers().subscribe(users => {
       console.log(users);
     });
   }
 
   user = new LoginForm('', '');
-  submitted = false;
 
   onSubmit(value: any){
-    console.log(value);
-    this.submitted = true;
+    this.authService.authenticate(value).subscribe(data => {
+      if(data = 'Success'){
+        this.router.navigateByUrl('menu');
+      }
+    });
   }
 
 }

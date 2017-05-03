@@ -12,18 +12,25 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var login_form_1 = require("./login.form");
 var users_service_1 = require("../services/users.service");
+var auth_service_1 = require("../services/auth.service");
+var router_1 = require("@angular/router");
 var LoginComponent = (function () {
-    function LoginComponent(usersService) {
+    function LoginComponent(usersService, authService, router) {
         this.usersService = usersService;
+        this.authService = authService;
+        this.router = router;
         this.user = new login_form_1.LoginForm('', '');
-        this.submitted = false;
         this.usersService.getUsers().subscribe(function (users) {
             console.log(users);
         });
     }
     LoginComponent.prototype.onSubmit = function (value) {
-        console.log(value);
-        this.submitted = true;
+        var _this = this;
+        this.authService.authenticate(value).subscribe(function (data) {
+            if (data = 'Success') {
+                _this.router.navigateByUrl('menu');
+            }
+        });
     };
     return LoginComponent;
 }());
@@ -33,6 +40,6 @@ LoginComponent = __decorate([
         selector: 'login-cmp',
         templateUrl: 'login.html'
     }),
-    __metadata("design:paramtypes", [users_service_1.UsersService])
+    __metadata("design:paramtypes", [users_service_1.UsersService, auth_service_1.AuthService, router_1.Router])
 ], LoginComponent);
 exports.LoginComponent = LoginComponent;

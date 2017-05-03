@@ -11,11 +11,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var games_service_1 = require("../services/games.service");
+var router_1 = require("@angular/router");
 var MenuComponent = (function () {
-    function MenuComponent(gamesService) {
+    function MenuComponent(gamesService, router) {
         this.gamesService = gamesService;
+        this.router = router;
         this.games = [];
         this.game = '';
+        this.selectedGame = '';
+        this.deletedGame = '';
     }
     MenuComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -23,11 +27,33 @@ var MenuComponent = (function () {
             _this.games = data.objects;
         });
     };
-    MenuComponent.prototype.openEditGameModal = function () {
+    MenuComponent.prototype.openEditGameModal = function (game) {
+        this.selectedGame = game;
         $('#editGameModal').modal("show");
     };
-    MenuComponent.prototype.openDeleteGameModal = function () {
+    MenuComponent.prototype.openDeleteGameModal = function (game) {
+        this.deletedGame = game;
         $('#deleteGameModal').modal("show");
+    };
+    MenuComponent.prototype.onEditSubmit = function (value) {
+        this.gamesService.updateGame(value).subscribe(function (data) {
+            $('#editGameModal').modal("hide");
+            window.location.reload();
+            // this.router.navigateByUrl('menu');
+        });
+    };
+    MenuComponent.prototype.closeEditGameModal = function () {
+        // this.router.navigateByUrl('/menu');
+        $('#editGameModal').modal("hide");
+        window.location.reload();
+    };
+    MenuComponent.prototype.deleteGame = function (value) {
+        this.gamesService.deleteGame(value).subscribe(function (data) {
+            console.log(data);
+            $('#deleteGameModal').modal("hide");
+            window.location.reload();
+            // this.router.navigateByUrl('menu');
+        });
     };
     return MenuComponent;
 }());
@@ -37,6 +63,6 @@ MenuComponent = __decorate([
         selector: 'menu-cmp',
         templateUrl: 'menu.html'
     }),
-    __metadata("design:paramtypes", [games_service_1.GamesService])
+    __metadata("design:paramtypes", [games_service_1.GamesService, router_1.Router])
 ], MenuComponent);
 exports.MenuComponent = MenuComponent;

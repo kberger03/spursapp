@@ -24,6 +24,7 @@ var navbar2_1 = require("./navbar2/navbar2");
 var navbar3_1 = require("./navbar3/navbar3");
 var users_service_1 = require("./services/users.service");
 var games_service_1 = require("./services/games.service");
+var auth_service_1 = require("./services/auth.service");
 var appRoutes = [
     { path: '', component: home_1.HomeComponent },
     { path: 'login', component: login_1.LoginComponent },
@@ -57,7 +58,8 @@ AppModule = __decorate([
         ],
         providers: [
             users_service_1.UsersService,
-            games_service_1.GamesService
+            games_service_1.GamesService,
+            auth_service_1.AuthService
         ],
         bootstrap: [app_component_1.AppComponent]
     })

@@ -13,21 +13,19 @@
   <div class="col-sm-2" align="center"></div>
   <div class="col-sm-8" align="center">
     <table class="table table-bordered table-hover table-responsive">
-        <tbody>
-            <div *ngFor="let game of games">
-                <tr>
-                <td>
-                    {{game.date}}<br>
-                    {{game.location}}
-                </td>
-                <td>
-                    Spurs vs. {{game.opponent}}<br>
-                    {{game.spursscore}} - {{game.oppscore}}
-                </td>
-                </tr>
-            </div>
-        </tbody>
-    </table>
+    <tbody>
+      <tr *ngFor="let game of games">
+          <td>
+            {{game.date | date}}<br>
+            {{game.location | uppercase}}
+          </td>
+          <td>
+            SPURS vs. {{game.opponent | uppercase}}<br>
+            {{game.spursscore}} - {{game.oppscore}}
+          </td>
+      </tr>
+    </tbody>
+  </table>
   </div>
   <div class="col-sm-2" align="center"></div>
 </div>

@@ -17,6 +17,7 @@ import { navbar2Component } from './navbar2/navbar2';
 import { navbar3Component } from './navbar3/navbar3';
 import { UsersService } from './services/users.service';
 import { GamesService } from './services/games.service';
+import { AuthService } from './services/auth.service';
 
 
 const appRoutes: Routes = [
@@ -47,7 +48,8 @@ const appRoutes: Routes = [
   ],
   providers: [
     UsersService,
-    GamesService
+    GamesService, 
+    AuthService
   ],
   bootstrap: [ AppComponent ]
 })

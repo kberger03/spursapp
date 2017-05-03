@@ -26,7 +26,7 @@ var editGameModalComponent = (function () {
     };
     editGameModalComponent.prototype.closeEditGameModal = function () {
         $('#editGameModal').modal("hide");
-        window.location.reload();
+        // window.location.reload();
     };
     return editGameModalComponent;
 }());

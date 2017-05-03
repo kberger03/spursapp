@@ -25,7 +25,7 @@ var addGameModalComponent = (function () {
         this.gamesService.addGame(value).subscribe(function (data) {
             console.log(data);
             $('#addGameModal').modal("hide");
-            window.location.reload();
+            // window.location.reload();
             // this.router.navigateByUrl('menu');
         });
     };

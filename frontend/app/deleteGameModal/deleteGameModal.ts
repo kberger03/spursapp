@@ -18,10 +18,12 @@ export class deleteGameModalComponent {
 
   deleteGame(value: any){
     this.submitted = true;
+    console.log("Deletegamemodal value is " + value);
+    console.log("Deletegamemodal value.id is " + value.id);
     this.gamesService.deleteGame(value).subscribe(data => {
       console.log(data);
-      $('#deleteGameModal').modal("hide");   
-      window.location.reload();
+      //$('#deleteGameModal').modal("hide");   
+      //window.location.reload();
       // this.router.navigateByUrl('menu');
     });
     

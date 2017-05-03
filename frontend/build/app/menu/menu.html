@@ -5,7 +5,7 @@
 <div class="row">
   <div class="col-sm-2" align="center"></div>
   <div class="col-sm-8" align="center">
-    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#addGameModal">
+    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addGameModal">
       Add Game
     </button>
     <br><br>
@@ -20,15 +20,13 @@
             SPURS vs. {{game.opponent | uppercase}}<br>
             {{game.spursscore}} - {{game.oppscore}}
           </td>
-          <td>
-          <editGameModal-cmp [game]="game"></editGameModal-cmp>
-          <button (click)="openEditGameModal()" type="button" class="btn btn-primary">
+          <td class="text-center">
+          <button (click)="openEditGameModal(game)" type="button" class="btn btn-warning">
             Edit Game
           </button>
           </td>
-          <td>
-          <deleteGameModal-cmp [game]="game"></deleteGameModal-cmp>
-          <button (click)="openDeleteGameModal()" type="button" class="btn btn-primary">
+          <td class="text-center">
+          <button (click)="openDeleteGameModal(game)" type="button" class="btn btn-danger">
             Delete Game
           </button>
         </td>
@@ -41,3 +39,92 @@
 </div>
 
 <addGameModal-cmp></addGameModal-cmp>
+
+
+
+<div class="modal fade" id="editGameModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="exampleModalLabel">Edit Game</h4>
+      </div>
+      <div class="modal-body">
+        <!--Form-->
+        <form class="form-horizontal" name="editGameModalForm" #editGameModalForm="ngForm" (ngSubmit)="onEditSubmit(editGameModalForm.value)" novalidate>
+            <!--ID-->
+            <div [hidden]="true" class="form-group">
+                <label for="id" class="col-lg-2 control-label">id</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" name="id" [(ngModel)]="selectedGame.id" id="id" placeholder="id" required autofocus>
+                </div>
+            </div>
+            <!--Date-->
+            <div class="form-group">
+                <label for="date" class="col-lg-2 control-label">Date</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" name="date" [(ngModel)]="selectedGame.date" id="date" placeholder="date" required autofocus>
+                </div>
+            </div>
+            <!--Opponent-->
+            <div class="form-group">
+                <label for="opponent" class="col-lg-2 control-label">Opponent</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" name="opponent" [(ngModel)]="selectedGame.opponent" id="opponent" placeholder="opponent" required>
+                </div>
+            </div>
+            <!--Location-->
+            <div class="form-group">
+                <label for="location" class="col-lg-2 control-label">Spurs Home/Away</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" name="location" [(ngModel)]="selectedGame.location" id="location" placeholder="location" required>
+                </div>
+            </div>
+            <!--SpursScore-->
+            <div class="form-group">
+                <label for="spursscore" class="col-lg-2 control-label">Spurs Score</label>
+                <div class="col-lg-10">
+                    <input type="number" class="form-control" name="spursscore" [(ngModel)]="selectedGame.spursscore" id="spursscore" placeholder="spursscore" required>
+                </div>
+            </div>
+            <!--OppScore-->
+            <div class="form-group">
+                <label for="oppscore" class="col-lg-2 control-label">Opponent Score</label>
+                <div class="col-lg-10">
+                    <input type="number" class="form-control" name="oppscore" [(ngModel)]="selectedGame.oppscore" id="oppscore" placeholder="oppscore" required>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Save changes</button>
+                <button (click)="closeEditGameModal()" type="button" class="btn btn-secondary">Close</button>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="modal fade" id="deleteGameModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="exampleModalLabel">Delete Game</h4>
+      </div>
+      <div class="modal-body">
+        <h4>Are you sure you want to delete this game?</h4>
+      </div>
+      <div class="modal-footer">
+        <button (click)="deleteGame(deletedGame.id)" type="button" class="btn btn-danger">Delete</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>

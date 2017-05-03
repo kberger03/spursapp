@@ -15,7 +15,8 @@ export class UsersService {
         return this.http.get(this.url).map(res => res.json());
     }
 
-    getUser(){
+    getUser(id: any){
+        return this.http.get(this.url + "/" + id).map(res => res.json());
     }
 
     addUser(value: any) { 

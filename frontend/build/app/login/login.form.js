@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var LoginForm = (function () {
-    function LoginForm(Username, Password) {
-        this.Username = Username;
-        this.Password = Password;
+    function LoginForm(login, password) {
+        this.login = login;
+        this.password = password;
     }
     return LoginForm;
 }());
