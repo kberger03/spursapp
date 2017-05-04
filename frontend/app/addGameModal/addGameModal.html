@@ -28,7 +28,11 @@
             <div class="form-group">
                 <label for="Location" class="col-lg-2 control-label">Spurs Home/Away</label>
                 <div class="col-lg-10">
-                    <input type="text" class="form-control" name="location" [(ngModel)]="game.location" id="location" placeholder="location" required>
+                    <select type="text" class="form-control" name="location" [(ngModel)]="game.location" id="location" placeholder="location" required>
+                        <option value="Home">Home</option>
+                        <option value="Away">Away</option>
+                    </select>
+                    <!--<input type="text" class="form-control" name="location" [(ngModel)]="game.location" id="location" placeholder="location" required>-->
                 </div>
             </div>
             <!--SpursScore-->

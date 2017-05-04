@@ -5,12 +5,10 @@
 <div class="row">
   <div class="col-sm-3" align="center"></div>
   <div class="col-sm-6" align="center">
-    <div class="well">
     This is the map to the ATT Center 
-      <sebm-google-map [latitude]="lat" [longitude]="lng">
+      <sebm-google-map [zoom]=12 [latitude]="lat" [longitude]="lng">
       <sebm-google-map-marker [latitude]="lat" [longitude]="lng"></sebm-google-map-marker>
       </sebm-google-map>
-    </div>
   </div>
   <div class="col-sm-3" align="center"></div>
 </div>

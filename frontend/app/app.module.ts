@@ -1,9 +1,10 @@
-import { NgModule }             from '@angular/core';
+import { NgModule, ApplicationRef }             from '@angular/core';
 import { BrowserModule }        from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpModule }           from '@angular/http';
 import { FormsModule }          from '@angular/forms';
-import { AgmCoreModule } from 'angular2-google-maps/core';
+import { CommonModule }         from '@angular/common';
+import { AgmCoreModule }        from 'angular2-google-maps/core';
 
 import { AppComponent }   from './app.component';
 import { HomeComponent }  from './home/home';
@@ -35,7 +36,8 @@ const appRoutes: Routes = [
     HttpModule, 
     FormsModule, 
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyCA-S4XiJZQ8xXUibPzrsn1efJIe6sBoyc'
+      apiKey: 'AIzaSyDCr2_3X_DxJADKn21Qq4VvPAN970ADHrI'
+      // apiKey: 'AIzaSyCA-S4XiJZQ8xXUibPzrsn1efJIe6sBoyc'
     })
   ],
   declarations: [ 

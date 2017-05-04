@@ -79,7 +79,11 @@
             <div class="form-group">
                 <label for="location" class="col-lg-2 control-label">Spurs Home/Away</label>
                 <div class="col-lg-10">
-                    <input type="text" class="form-control" name="location" [(ngModel)]="selectedGame.location" id="location" placeholder="location" required>
+                    <!--<input type="text" class="form-control" name="location" [(ngModel)]="selectedGame.location" id="location" placeholder="location" required>-->
+                    <select type="text" class="form-control" name="location" [(ngModel)]="selectedGame.location" id="location" placeholder="location" required>
+                        <option value="Home">Home</option>
+                        <option value="Away">Away</option>
+                    </select>
                 </div>
             </div>
             <!--SpursScore-->
