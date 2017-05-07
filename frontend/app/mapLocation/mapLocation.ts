@@ -10,7 +10,7 @@ import { AgmCoreModule }        from 'angular2-google-maps/core';
 export class mapLocationComponent { 
 
   title: string = 'My first angular2-google-maps project';
-  lat: number = 51.678418;
-  lng: number = 7.809007;
+  lat: number = 29.4271;
+  lng: number = -98.4374;
 
 }

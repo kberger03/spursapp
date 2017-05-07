@@ -19,8 +19,6 @@ var signup_1 = require("./signup/signup");
 var menu_1 = require("./menu/menu");
 var mapLocation_1 = require("./mapLocation/mapLocation");
 var addGameModal_1 = require("./addGameModal/addGameModal");
-var editGameModal_1 = require("./editGameModal/editGameModal");
-var deleteGameModal_1 = require("./deleteGameModal/deleteGameModal");
 var navbar_1 = require("./navbar/navbar");
 var navbar2_1 = require("./navbar2/navbar2");
 var navbar3_1 = require("./navbar3/navbar3");
@@ -58,8 +56,6 @@ AppModule = __decorate([
             menu_1.MenuComponent,
             mapLocation_1.mapLocationComponent,
             addGameModal_1.addGameModalComponent,
-            editGameModal_1.editGameModalComponent,
-            deleteGameModal_1.deleteGameModalComponent,
             navbar_1.navbarComponent,
             navbar2_1.navbar2Component,
             navbar3_1.navbar3Component

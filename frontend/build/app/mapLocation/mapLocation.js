@@ -10,8 +10,8 @@ var core_1 = require("@angular/core");
 var mapLocationComponent = (function () {
     function mapLocationComponent() {
         this.title = 'My first angular2-google-maps project';
-        this.lat = 51.678418;
-        this.lng = 7.809007;
+        this.lat = 29.4271;
+        this.lng = -98.4374;
     }
     return mapLocationComponent;
 }());

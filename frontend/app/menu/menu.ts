@@ -36,8 +36,7 @@ export class MenuComponent {
 
    onEditSubmit(value: any){
     this.gamesService.updateGame(value).subscribe(data => {
-      $('#editGameModal').modal("hide");   
-      window.location.reload();
+      $('#editGameModal').modal("hide");
       // this.router.navigateByUrl('menu');
     });
     

@@ -38,7 +38,6 @@ var MenuComponent = (function () {
     MenuComponent.prototype.onEditSubmit = function (value) {
         this.gamesService.updateGame(value).subscribe(function (data) {
             $('#editGameModal').modal("hide");
-            window.location.reload();
             // this.router.navigateByUrl('menu');
         });
     };

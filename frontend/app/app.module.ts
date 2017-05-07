@@ -13,8 +13,6 @@ import { SignupComponent } from './signup/signup';
 import { MenuComponent } from './menu/menu';
 import { mapLocationComponent } from './mapLocation/mapLocation';
 import { addGameModalComponent } from './addGameModal/addGameModal';
-import { editGameModalComponent } from './editGameModal/editGameModal';
-import { deleteGameModalComponent } from './deleteGameModal/deleteGameModal';
 import { navbarComponent } from './navbar/navbar';
 import { navbar2Component } from './navbar2/navbar2';
 import { navbar3Component } from './navbar3/navbar3';
@@ -48,8 +46,6 @@ const appRoutes: Routes = [
     MenuComponent,
     mapLocationComponent,
     addGameModalComponent,
-    editGameModalComponent,
-    deleteGameModalComponent,
     navbarComponent, 
     navbar2Component,
     navbar3Component
