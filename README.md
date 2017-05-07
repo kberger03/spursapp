@@ -11,7 +11,7 @@ The web page also includes use of the Google maps API to show the loctaion of th
   </a>
 </p>
 
-## Structure
+## Project Structure
 
 I built this application as part of a semester long project. I used the Angular2 starter kit provided by Miguel Angulo. The starter kit consists of a 
 Python backend, and CSS, HTML, and Typescript frontend. Additionally, I used Javascript and JQuery in small intervals for the project. 
@@ -28,10 +28,10 @@ will automatically update the Heroku application. You can view and use the appli
 I have created an initial Admin for you to log in with. The details for that profile are listed below. 
 Once you have logged in with this profile, you are able to create additional admins, add games, edit games, and delete games. 
 
-Name: First Admin
-Email: admin@mail.com
-Username: Admin
-Password: pass123
+Name: First Admin  
+Email: admin@mail.com  
+Username: Admin  
+Password: pass123  
 
 Please let me know if you have any questions regarding the application.  
 
