@@ -1,3 +1,5 @@
+<!--login.html-->
+<!--Page for the admin to login-->
 <navbar3-cmp></navbar3-cmp>
 
 <div class="jumbotron">
@@ -6,7 +8,7 @@
   <div class="col-sm-3" align="center"></div>
   <div class="col-sm-6" align="center">
     <div class="well">
-    <!--Form-->
+    <!--Form Begin-->
         <form class="form-horizontal" name="loginForm" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm.value)" novalidate>
             <legend>Admin Login</legend>
             <!--Username Field-->
@@ -25,11 +27,13 @@
             </div>
             <div class="form-group">
                 <div class="col-lg-10 col-lg-offset-1">
+                    <!--Button Selections-->
                     <button type="submit" class="btn btn-primary">Submit</button>
                     <button type="reset" class="btn btn-default" routerLink="/">Cancel</button>
                 </div>
             </div>
         </form>
+        <!--Form End-->
       </div>
   </div>
   <div class="col-sm-3" align="center"></div>

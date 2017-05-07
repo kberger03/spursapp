@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+// addGameModal.form.ts
 var addGameModalForm = (function () {
     function addGameModalForm(date, opponent, location, spursscore, oppscore) {
         this.date = date;

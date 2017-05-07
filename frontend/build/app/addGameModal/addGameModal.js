@@ -9,6 +9,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+// addgameModal.ts
+// add a game to the database
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var addGameModal_form_1 = require("./addGameModal.form");
@@ -19,12 +21,13 @@ var addGameModalComponent = (function () {
         this.router = router;
         this.game = new addGameModal_form_1.addGameModalForm('', '', '', 0, 0);
     }
+    // Actions for form submission
     addGameModalComponent.prototype.onSubmit = function (value) {
         this.gamesService.addGame(value).subscribe(function (data) {
-            console.log(data);
-            $('#addGameModal').modal("hide");
+            console.log(data); //for troubleshooting purposes
+            $('#addGameModal').modal("hide"); //hides modal
             window.location.reload();
-            // this.router.navigateByUrl('menu');
+            // this.router.navigateByUrl('menu'); // may need later
         });
     };
     return addGameModalComponent;

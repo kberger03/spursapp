@@ -1,3 +1,4 @@
+// addGameModal.form.ts
 export class addGameModalForm {
     constructor(
         public date: string,

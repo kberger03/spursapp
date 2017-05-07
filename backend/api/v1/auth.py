@@ -32,4 +32,4 @@ def authentication():
     if user and user.check_password(password):
         return make_response(jsonify('Success'), 200)
     else:
-        return make_response('Unauthenticated', 401)
+        return make_response(jsonify('Unauthenticated'), 401)

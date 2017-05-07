@@ -1,3 +1,5 @@
+<!--addGameModel.html-->
+<!--Used to add a game to the database-->
 <div class="modal fade" id="addGameModal" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -8,19 +10,20 @@
         <h4 class="modal-title" id="exampleModalLabel">Add Game</h4>
       </div>
       <div class="modal-body">
-        <!--Form-->
+        <!--Form begin-->
         <form class="form-horizontal" name="addGameModalForm" #addGameModalForm="ngForm" (ngSubmit)="onSubmit(addGameModalForm.value)" novalidate>
-            <!--Date-->
+            <!--Date field-->
             <div class="form-group">
                 <label for="Date" class="col-lg-2 control-label">Date</label>
                 <div class="col-lg-10">
                     <input type="date" class="form-control" name="date" [(ngModel)]="game.date" id="date" placeholder="mm/dd/yy" required autofocus>
                 </div>
             </div>
-            <!--Opponent-->
+            <!--Opponent field-->
             <div class="form-group">
                 <label for="Opponent" class="col-lg-2 control-label">Opponent</label>
                 <div class="col-lg-10">
+                    <!--dropdown selection-->
                     <select type="text" class="form-control" name="opponent" [(ngModel)]="game.opponent" id="opponent" placeholder="opponent" required>
                         <option value="Atlanta Hawks">Atlanta Hawks</option>
                         <option value="Boston Celtics">Boston Celtics</option>
@@ -52,28 +55,27 @@
                         <option value="Utah Jazz">Utah Jazz</option>
                         <option value="Washington Wizards">Washington Wizards</option>
                     </select>
-                    <!--<input type="text" class="form-control" name="opponent" [(ngModel)]="game.opponent" id="opponent" placeholder="opponent" required>-->
                 </div>
             </div>
-            <!--Location-->
+            <!--Location field-->
             <div class="form-group">
                 <label for="Location" class="col-lg-2 control-label">Spurs Home/Away</label>
                 <div class="col-lg-10">
+                    <!--dropdown selection-->
                     <select type="text" class="form-control" name="location" [(ngModel)]="game.location" id="location" placeholder="location" required>
                         <option value="Home">Home</option>
                         <option value="Away">Away</option>
                     </select>
-                    <!--<input type="text" class="form-control" name="location" [(ngModel)]="game.location" id="location" placeholder="location" required>-->
                 </div>
             </div>
-            <!--SpursScore-->
+            <!--SpursScore field-->
             <div class="form-group">
                 <label for="SpursScore" class="col-lg-2 control-label">Spurs Score</label>
                 <div class="col-lg-10">
                     <input type="number" class="form-control" name="spursscore" [(ngModel)]="game.spursscore" id="spursscore" placeholder="spursscore" required>
                 </div>
             </div>
-            <!--OppScore-->
+            <!--OppScore field-->
             <div class="form-group">
                 <label for="OppScore" class="col-lg-2 control-label">Opponent Score</label>
                 <div class="col-lg-10">
@@ -86,6 +88,7 @@
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
         </form>
+        <!--End Form-->
       </div>
     </div>
   </div>

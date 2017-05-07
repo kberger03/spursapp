@@ -1,3 +1,5 @@
+<!--signup.html-->
+<!--The add admin function-->
 <div class="modal fade" id="signup" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -8,7 +10,7 @@
         <h2 class="modal-title" id="exampleModalLabel">Add Admin</h2>
       </div>
       <div class="modal-body">
-        <!--Form-->
+        <!--Form begins-->
         <form class="form-horizontal" name="signupForm" #signupForm="ngForm" (ngSubmit)="onSubmit(signupForm.value)" novalidate>
         <!--Name Field-->
             <div class="form-group">
@@ -39,10 +41,12 @@
                 </div>
             </div>
             <div class="modal-footer">
+                <!--submission buttons-->
                 <button type="submit" class="btn btn-primary">Add</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
             </div>
         </form>
+        <!--end of form-->
       </div>
     </div>
   </div>

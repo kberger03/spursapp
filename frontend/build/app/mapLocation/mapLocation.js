@@ -6,10 +6,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+// mapLocaiton.ts
+//map directions for home games using google maps
 var core_1 = require("@angular/core");
 var mapLocationComponent = (function () {
     function mapLocationComponent() {
-        this.title = 'My first angular2-google-maps project';
+        this.title = 'Spurs ATT Center';
+        //locaiton of the ATT Center
         this.lat = 29.4271;
         this.lng = -98.4374;
     }

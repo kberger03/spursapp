@@ -9,6 +9,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+// menu.ts
+// main admin page for manipulating data 
 var core_1 = require("@angular/core");
 var games_service_1 = require("../services/games.service");
 var router_1 = require("@angular/router");
@@ -21,31 +23,37 @@ var MenuComponent = (function () {
         this.selectedGame = '';
         this.deletedGame = '';
     }
+    // on load of page
     MenuComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.gamesService.getGames().subscribe(function (data) {
             _this.games = data.objects;
         });
     };
+    // opens edit game modal
     MenuComponent.prototype.openEditGameModal = function (game) {
         this.selectedGame = game;
         $('#editGameModal').modal("show");
     };
+    // opens delete gmae modal
     MenuComponent.prototype.openDeleteGameModal = function (game) {
         this.deletedGame = game;
         $('#deleteGameModal').modal("show");
     };
+    // actions for edit game submission
     MenuComponent.prototype.onEditSubmit = function (value) {
         this.gamesService.updateGame(value).subscribe(function (data) {
             $('#editGameModal').modal("hide");
-            // this.router.navigateByUrl('menu');
+            // this.router.navigateByUrl('menu'); //may need later
         });
     };
+    //actions for closing edit game modal without saving
     MenuComponent.prototype.closeEditGameModal = function () {
-        // this.router.navigateByUrl('/menu');
+        // this.router.navigateByUrl('/menu'); //may need later
         $('#editGameModal').modal("hide");
         window.location.reload();
     };
+    //actions for delete game modal 
     MenuComponent.prototype.deleteGame = function (value) {
         this.gamesService.deleteGame(value).subscribe(function (data) {
             console.log(data);

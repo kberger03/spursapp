@@ -1,3 +1,5 @@
+<!--menu.html-->
+<!--main admin page for manipulating data-->
 <navbar2-cmp></navbar2-cmp>
 
 <div class="container">
@@ -9,12 +11,15 @@
   <div class="col-sm-2" align="center"></div>
   <div class="col-sm-8" align="center">
     <br>
-    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addGameModal">
+    <!--Add game button -->
+    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#addGameModal">
       Add Game
     </button>
     <br><br>
+    <!--table begin-->
     <table class="table table-bordered table-hover table-responsive">
     <tbody>
+      <!--For loop to display all games-->
       <tr *ngFor="let game of games">
           <td>
             {{game.date | date}}<br>
@@ -25,11 +30,13 @@
             {{game.spursscore}} - {{game.oppscore}}
           </td>
           <td class="text-center">
+            <!--edit game button-->
           <button (click)="openEditGameModal(game)" type="button" class="btn btn-warning">
             Edit Game
           </button>
           </td>
           <td class="text-center">
+            <!--delete game button-->
           <button (click)="openDeleteGameModal(game)" type="button" class="btn btn-danger">
             Delete Game
           </button>
@@ -37,16 +44,18 @@
       </tr>
     </tbody>
   </table>
+  <!--table end-->
   </div>
   <div class="col-sm-2" align="center"></div>
 </div>
 </div>
 </div>
 
+<!--import-->
 <addGameModal-cmp></addGameModal-cmp>
 
 
-
+<!--Edit Game Modal-->
 <div class="modal fade" id="editGameModal" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -57,26 +66,27 @@
         <h4 class="modal-title" id="exampleModalLabel">Edit Game</h4>
       </div>
       <div class="modal-body">
-        <!--Form-->
+        <!--Form begin-->
         <form class="form-horizontal" name="editGameModalForm" #editGameModalForm="ngForm" (ngSubmit)="onEditSubmit(editGameModalForm.value)" novalidate>
-            <!--ID-->
+            <!--ID field, stays hidden to the admin-->
             <div [hidden]="true" class="form-group">
                 <label for="id" class="col-lg-2 control-label">id</label>
                 <div class="col-lg-10">
                     <input type="text" class="form-control" name="id" [(ngModel)]="selectedGame.id" id="id" placeholder="id" required autofocus>
                 </div>
             </div>
-            <!--Date-->
+            <!--Date field-->
             <div class="form-group">
                 <label for="date" class="col-lg-2 control-label">Date</label>
                 <div class="col-lg-10">
-                    <input type="text" class="form-control" name="date" [(ngModel)]="selectedGame.date" id="date" placeholder="date" required autofocus>
+                    <input type="text" class="form-control" name="date" [(ngModel)]="selectedGame.date" id="date" placeholder="mm/dd/yy" required autofocus>
                 </div>
             </div>
-            <!--Opponent-->
+            <!--Opponent field-->
             <div class="form-group">
                 <label for="opponent" class="col-lg-2 control-label">Opponent</label>
                 <div class="col-lg-10">
+                  <!--dropdown selection-->
                     <select type="text" class="form-control" name="opponent" [(ngModel)]="selectedGame.opponent" id="opponent" placeholder="opponent" required>
                         <option value="Atlanta Hawks">Atlanta Hawks</option>
                         <option value="Boston Celtics">Boston Celtics</option>
@@ -108,28 +118,27 @@
                         <option value="Utah Jazz">Utah Jazz</option>
                         <option value="Washington Wizards">Washington Wizards</option>
                     </select>
-                    <!--<input type="text" class="form-control" name="opponent" [(ngModel)]="selectedGame.opponent" id="opponent" placeholder="opponent" required>-->
                 </div>
             </div>
-            <!--Location-->
+            <!--Location field-->
             <div class="form-group">
                 <label for="location" class="col-lg-2 control-label">Spurs Home/Away</label>
                 <div class="col-lg-10">
-                    <!--<input type="text" class="form-control" name="location" [(ngModel)]="selectedGame.location" id="location" placeholder="location" required>-->
+                  <!--dropdown selection-->
                     <select type="text" class="form-control" name="location" [(ngModel)]="selectedGame.location" id="location" placeholder="location" required>
                         <option value="Home">Home</option>
                         <option value="Away">Away</option>
                     </select>
                 </div>
             </div>
-            <!--SpursScore-->
+            <!--SpursScore field-->
             <div class="form-group">
                 <label for="spursscore" class="col-lg-2 control-label">Spurs Score</label>
                 <div class="col-lg-10">
                     <input type="number" class="form-control" name="spursscore" [(ngModel)]="selectedGame.spursscore" id="spursscore" placeholder="spursscore" required>
                 </div>
             </div>
-            <!--OppScore-->
+            <!--OppScore field-->
             <div class="form-group">
                 <label for="oppscore" class="col-lg-2 control-label">Opponent Score</label>
                 <div class="col-lg-10">
@@ -137,18 +146,19 @@
                 </div>
             </div>
             <div class="modal-footer">
+              <!--submission buttons-->
                 <button type="submit" class="btn btn-primary">Save changes</button>
                 <button (click)="closeEditGameModal()" type="button" class="btn btn-secondary">Close</button>
             </div>
         </form>
+        <!--form end-->
       </div>
     </div>
   </div>
 </div>
 
 
-
-
+<!--Delete Game Modal-->
 <div class="modal fade" id="deleteGameModal" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">

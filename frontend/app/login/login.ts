@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+// login.ts
+// Page for the admin to login
+import { Component, OnInit } from '@angular/core';
 import { LoginForm } from './login.form';
 import { UsersService } from '../services/users.service';
 import { AuthService } from '../services/auth.service';
@@ -23,10 +25,11 @@ export class LoginComponent {
 
   user = new LoginForm('', '');
 
+//Actions upon submission
   onSubmit(value: any){
     this.authService.authenticate(value).subscribe(data => {
       if(data = 'Success'){
-        this.router.navigateByUrl('menu');
+        this.router.navigateByUrl('menu'); //redirect to the menu page in success case
       }
     });
   }

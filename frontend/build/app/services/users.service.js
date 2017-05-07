@@ -9,21 +9,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+//users.service.ts
+//The service to manipulate users in the database
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 require("rxjs/add/operator/map");
 var UsersService = (function () {
     function UsersService(http) {
         this.http = http;
-        this.url = '/api/v1/users';
-        console.log('UsersService Initialized...');
+        this.url = '/api/v1/users'; //so only one change needs to be made if modified
     }
+    //requests all the users in the database
     UsersService.prototype.getUsers = function () {
         return this.http.get(this.url).map(function (res) { return res.json(); });
     };
+    //requests a singular user in the database 
     UsersService.prototype.getUser = function (id) {
         return this.http.get(this.url + "/" + id).map(function (res) { return res.json(); });
     };
+    //adds a user to the database 
     UsersService.prototype.addUser = function (value) {
         var valueString = JSON.stringify(value);
         var header = new http_1.Headers({ 'Content-Type': 'application/json' });

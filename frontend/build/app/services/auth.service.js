@@ -9,19 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+// auth.services.ts
+//The service for authenticating the username and password for logging in 
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 require("rxjs/add/operator/map");
 var AuthService = (function () {
     function AuthService(http) {
         this.http = http;
-        this.url = '/api/v1/auth';
+        this.url = '/api/v1/auth'; //so only one change needs to be made if modified
     }
     AuthService.prototype.authenticate = function (value) {
         var valueString = JSON.stringify(value);
         var header = new http_1.Headers({ 'Content-Type': 'application/json' });
         var options = new http_1.RequestOptions({ headers: header });
-        console.log(valueString);
+        console.log(valueString); //for troubleshooting purposes
         return this.http.post(this.url, valueString, options).map(function (res) { return res.json(); });
     };
     return AuthService;

@@ -1,3 +1,4 @@
+// spurs center
 import { NgModule, ApplicationRef }             from '@angular/core';
 import { BrowserModule }        from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
@@ -20,6 +21,7 @@ import { UsersService } from './services/users.service';
 import { GamesService } from './services/games.service';
 import { AuthService } from './services/auth.service';
 
+// Routes to jump to 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
@@ -35,7 +37,7 @@ const appRoutes: Routes = [
     FormsModule, 
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDCr2_3X_DxJADKn21Qq4VvPAN970ADHrI'
-      // apiKey: 'AIzaSyCA-S4XiJZQ8xXUibPzrsn1efJIe6sBoyc'
+      // apiKey: 'AIzaSyCA-S4XiJZQ8xXUibPzrsn1efJIe6sBoyc'//old key 
     })
   ],
   declarations: [ 

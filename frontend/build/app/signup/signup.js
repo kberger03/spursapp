@@ -9,6 +9,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+// signup.ts
+//The add admin page 
 var core_1 = require("@angular/core");
 var signup_form_1 = require("./signup.form");
 var users_service_1 = require("../services/users.service");
@@ -20,6 +22,7 @@ var SignupComponent = (function () {
             console.log(users);
         });
     }
+    // actions upon submission of the form 
     SignupComponent.prototype.onSubmit = function (value) {
         console.log(value);
         this.usersService.addUser(value).subscribe(function (data) {

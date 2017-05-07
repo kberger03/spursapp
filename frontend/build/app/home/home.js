@@ -9,6 +9,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+// home.ts
+// User page
 var core_1 = require("@angular/core");
 var games_service_1 = require("../services/games.service");
 var HomeComponent = (function () {

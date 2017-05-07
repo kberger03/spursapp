@@ -6,6 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+// spurs center
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var router_1 = require("@angular/router");
@@ -25,6 +26,7 @@ var navbar3_1 = require("./navbar3/navbar3");
 var users_service_1 = require("./services/users.service");
 var games_service_1 = require("./services/games.service");
 var auth_service_1 = require("./services/auth.service");
+// Routes to jump to 
 var appRoutes = [
     { path: '', component: home_1.HomeComponent },
     { path: 'login', component: login_1.LoginComponent },
@@ -45,7 +47,7 @@ AppModule = __decorate([
             forms_1.FormsModule,
             core_2.AgmCoreModule.forRoot({
                 apiKey: 'AIzaSyDCr2_3X_DxJADKn21Qq4VvPAN970ADHrI'
-                // apiKey: 'AIzaSyCA-S4XiJZQ8xXUibPzrsn1efJIe6sBoyc'
+                // apiKey: 'AIzaSyCA-S4XiJZQ8xXUibPzrsn1efJIe6sBoyc'//old key 
             })
         ],
         declarations: [

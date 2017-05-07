@@ -1,3 +1,5 @@
+// signup.ts
+//The add admin page 
 import { Component } from '@angular/core';
 import { SignupForm } from './signup.form';
 import { UsersService } from '../services/users.service';
@@ -18,6 +20,7 @@ export class SignupComponent {
 
   user = new SignupForm('', '', '', '');
 
+// actions upon submission of the form 
   onSubmit(value: any){
     console.log(value);
     this.usersService.addUser(value).subscribe(data => {

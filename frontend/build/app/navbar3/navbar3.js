@@ -6,10 +6,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+//navbar3.ts
+//The navbar for the login page 
 var core_1 = require("@angular/core");
 var navbar3Component = (function () {
     function navbar3Component() {
-        this.name = 'navbar3Component';
     }
     return navbar3Component;
 }());

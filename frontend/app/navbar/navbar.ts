@@ -1,3 +1,4 @@
+// navbar.ts
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,4 @@ import { Component } from '@angular/core';
   templateUrl: 'navbar.html'
 })
 export class navbarComponent { 
-  name = 'navbarComponent'; 
 }

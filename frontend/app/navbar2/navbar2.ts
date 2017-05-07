@@ -1,3 +1,5 @@
+//navbar2.ts
+//The navbar for the admin 
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +8,4 @@ import { Component } from '@angular/core';
   templateUrl: 'navbar2.html'
 })
 export class navbar2Component { 
-  name = 'navbar2Component'; 
 }

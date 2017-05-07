@@ -9,6 +9,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+// login.ts
+// Page for the admin to login
 var core_1 = require("@angular/core");
 var login_form_1 = require("./login.form");
 var users_service_1 = require("../services/users.service");
@@ -24,11 +26,12 @@ var LoginComponent = (function () {
             console.log(users);
         });
     }
+    //Actions upon submission
     LoginComponent.prototype.onSubmit = function (value) {
         var _this = this;
         this.authService.authenticate(value).subscribe(function (data) {
             if (data = 'Success') {
-                _this.router.navigateByUrl('menu');
+                _this.router.navigateByUrl('menu'); //redirect to the menu page in success case
             }
         });
     };

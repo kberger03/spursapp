@@ -1,5 +1,8 @@
+<!--home.html-->
+<!--This is the first page the user sees-->
 <navbar-cmp></navbar-cmp>
 
+<!--Welcome Screen-->
 <div class="jumbotron">
    <div class="container">
         <br>
@@ -15,21 +18,26 @@
   </div>
 </div>
 
+<!--Schedule-->
 <div class="container">
     <h1 align="center">San Antonio Spurs Game Schedule</h1>
     <br>
 </div>
 <div class="main">
 <div class="container">
+  
 <div class="row">
   <div class="col-sm-2" align="center"></div>
   <div class="col-sm-8" align="center">
     <br>
+    <!--Map Button-->
     <button type="button" class="btn btn-primary map-btn" routerLink="/map"> Map to Home Games</button>
     <br><br>
+    <!--Table Begin-->
     <table class="table table-bordered table-hover table-responsive">
     <tbody>
-      <tr *ngFor="let game of games">
+      <!--For loop to display all games-->
+      <tr *ngFor="let game of games"> 
           <td>
             {{game.date | date}}<br>
             {{game.location | uppercase}}
@@ -41,6 +49,7 @@
       </tr>
     </tbody>
   </table>
+  <!--Table End-->
   </div>
   <div class="col-sm-2" align="center"></div>
 </div>
